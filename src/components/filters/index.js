@@ -28,9 +28,11 @@ export default class Filters extends React.Component{
                 <label>Successfull Launch</label>
                 <div className='options'>
                     <div onClick={()=>this.props.setLaunch('true')}>
+                    {/* eslint-disable-next-line */}
                         <span className={ this.props.config.launch  == 'true' ? 'active' : ''} >True </span>
                     </div>
                     <div onClick={()=>this.props.setLaunch('false')}>
+                    {/* eslint-disable-next-line */}
                         <span className={ this.props.config.launch  == 'false' ? 'active' : ''} >False</span>
                     </div>
                 </div>
@@ -41,9 +43,11 @@ export default class Filters extends React.Component{
                 <label>Successfull Landing</label>
                 <div className='options'>
                     <div onClick={()=>this.props.setLand('true')}>
+                    {/* eslint-disable-next-line */}
                         <span className={ this.props.config.land  == 'true' ? 'active' : ''} >True </span>
                     </div>
                     <div onClick={()=>this.props.setLand('false')}>
+                    {/*  eslint-disable-next-line */}
                         <span className={ this.props.config.land  == 'false' ? 'active' : ''} >False</span>
                     </div>
                 </div>
