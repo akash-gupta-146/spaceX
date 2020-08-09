@@ -2,25 +2,30 @@ import React from 'react';
 import * as style from './style.module.css';
 import Card from '../card';
 
-const API_HOST ='https://api.spacexdata.com/v3';
+// const API_HOST ='https://api.spacexdata.com/v3';
 
 export default class LaunchList extends React.Component{
 
     constructor(props){
         super(props)
-        this.state= {
-            list:[],
-            start:1,
-            count:10
-        }
+        // this.state= {
+        //     list:[],
+        //     start:1,
+        //     count:10
+        // }
+
+        this.getData()
         
     }
 
-     componentDidMount = async () => {
-        let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}`);
-        let data = await res.json();
-        console.log(data)
-        this.setState({list:data})
+    getData = async() => {
+        // let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}`);
+        // let data = await res.json();
+        // console.log(data)
+        // this.setState({list:data})
+    }
+
+     componentDidMount = () => {
 
         // const handleIntersection = (entries, observer) => {
         //     entries.forEach((entry) => {
@@ -43,9 +48,9 @@ export default class LaunchList extends React.Component{
         return<>
             <div className='list'>
                 {
-                    this.state && this.state.list.length ?
-                    this.state.list.map( (launch,i) => <Card launch={launch} key={`card${i}`} /> ) :
-                    <div>Content Not Available</div>
+                    this.props.list && this.props.list.length ?
+                    this.props.list.map( (launch,i) => <Card launch={launch} key={`card${i}`} /> ) :
+                    <></>
                 }
             </div>
         </>
