@@ -28,7 +28,7 @@ App will be hosted on localhost port 3030 (if port is not specified in process e
 
 ## Git repository
 
- https://git.heroku.com/spacex-launche.git
+ https://github.com/akash-gupta-146/spaceX
 
 
 ## Deployment
