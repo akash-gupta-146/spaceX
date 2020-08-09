@@ -1,0 +1,45 @@
+.filterSections{
+    max-width:180px;
+    width:100%;
+    padding:20px;
+    background:#fff;
+    height: fit-content;
+    margin: 0 10px 0 20px;
+}
+
+.filter{
+    margin-bottom:30px;
+}
+
+.filter .options{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.filter .options div{
+    width:50%;
+    text-align:center;
+    padding: 3px 6px;
+    box-sizing: border-box;
+}
+.options div span{
+    background: #c5e09a;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s
+}
+
+.options div span:hover{
+    background: #cef197;
+}
+
+
+.filterSections .filter label{
+    border-bottom: 1px solid #bdbdbd;
+    text-align: center;
+    padding-bottom: 5px;
+    display: block;
+    margin: 10px;
+}
