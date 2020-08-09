@@ -25,12 +25,10 @@ class App extends React.Component{
   getLaunches = async () => {
     let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}`);
     this.launchData = await res.json();
-    console.log(this.launchData)
     this.setState({list:this.launchData})
   }
 
 componentDidUpdate(){
-  console.log('Component Updated', this.state.list);
   this.updateLocalstorage();
 }
 
@@ -54,9 +52,7 @@ filter = async ( year = this.state.year, launch = this.state.launch, land = this
   // });
 
   let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}&launch_success=${launch}&land_success=${land}&launch_year=${year}`)
-  console.log(`${API_HOST}/launches?limit=${this.state.count}&launch_success=${launch}&land_success=${land}&launch_year=${year}`)
   res = await res.json();
-  console.log(res)
 
   this.setState({ list: res })
 }
@@ -86,7 +82,6 @@ updateLocalstorage = () =>{
   const {year,launch,land} = this.state
   if(window){
     let temp = JSON.stringify({year,launch,land});
-    console.log(temp)
     window.localStorage.setItem('configuration',temp)
 }
 }
@@ -98,7 +93,6 @@ updateLocalstorage = () =>{
             this.setState({...temp})
         }else{
             let temp = JSON.stringify(this.state);
-            console.log(temp)
             window.localStorage.setItem('configuration',temp)
         }
     }
