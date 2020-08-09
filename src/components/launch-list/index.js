@@ -1,6 +1,7 @@
 import React from 'react';
 import  './style.css';
 import Card from '../card';
+import Result from '../result';
 
 // const API_HOST ='https://api.spacexdata.com/v3';
 
@@ -38,10 +39,10 @@ export default class LaunchList extends React.Component{
                     (
                         this.props.list.length ?  this.props.list.map( (launch,i) => <Card launch={launch} key={`card${i}`} /> )
                          : 
-                        <div>No content Available</div>
+                        <Result type='notfound' />
                     )
                     :
-                    <div>Loading</div>
+                    <Result type='loading' />
                 }
             </div>
         </>
