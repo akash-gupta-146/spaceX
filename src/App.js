@@ -63,11 +63,13 @@ changeYear = (year) => {
 }
 
 changeLaunchFilter = (launch) => {
+  launch = launch === this.state.launch ? '' : launch;
   this.setState({launch})
   this.filter(this.state.year,launch,this.state.land);
 }
 
 changeLandingFilter = (land) => {
+  land = land === this.state.land ? '' : land;
   this.setState({land})
   this.filter(this.state.year,this.state.launch,land);
 }
