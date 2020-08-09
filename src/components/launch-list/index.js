@@ -41,16 +41,14 @@ export default class LaunchList extends React.Component{
 
     render = () =>{
         return<>
-            <div className={style.launchList} id='list'>
-                <div>here</div>
+            <div className={style.list}>
                 {
-                    this.state && this.state.list.length && 
-                    this.state.list.map( (launch,i) => {
-                        return <Card launch={launch} key={`card${i}`} />
-                    } )
+                    this.state && this.state.list.length ?
+                    this.state.list.map( (launch,i) => <Card launch={launch} key={`card${i}`} /> ) :
+                    <div>Content Not Available</div>
                 }
             </div>
-            <div id='loadmore'></div>
+            <div id='loadmore'>Develped by : Akash Gupta</div>
         </>
     }
 }
