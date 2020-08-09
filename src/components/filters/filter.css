@@ -35,6 +35,10 @@
     background: #cef197;
 }
 
+.options div span.active{
+    background:#7cb90a;
+}
+
 
 .filterSections .filter label{
     border-bottom: 1px solid #bdbdbd;
