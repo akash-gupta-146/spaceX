@@ -18,7 +18,7 @@ User can also filter the results based on Launch Year, Successful Launc or Succe
 
 App will be hosted on localhost port 3030 (if port is not specified in process env)
 
-## How to Deploy
+## Create production build
 
 1) Goto application directory
 2) yarn build
@@ -28,10 +28,11 @@ App will be hosted on localhost port 3030 (if port is not specified in process e
 
 ## Git repository
 
- https://git.heroku.com/spacex-launche.git
+ https://github.com/akash-gupta-146/spaceX
 
 
 ## Deployment
+
 App is live and deployed at [spacex](https://spacex-launche.herokuapp.com/) https://spacex-launche.herokuapp.com/
 
 ## Performance Measures
