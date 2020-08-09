@@ -34,41 +34,49 @@ componentDidUpdate(){
   this.updateLocalstorage();
 }
 
-filter = ( year = this.state.year, launch = this.state.launch, land = this.state.land ) => {
+filter = async ( year = this.state.year, launch = this.state.launch, land = this.state.land ) => {
 
-  if(this.launchData)
-  var temp = this.launchData.filter( launchMission => {
-    console.log('xxxxxxxxxxxx');
-    console.log(year);
+  // FILTERING without API CALL
+  // if(this.launchData)
+  // var temp = this.launchData.filter( launchMission => {
+  //   console.log(year);
     
-    // converting data to match localstorage
-    let launch_year = launchMission.launch_year;
-    let launch_success = launchMission.launch_success ? 'true' : 'false';
-    let launch_land = launchMission.rocket.first_stage.cores[0].land_success ? 'true' : 'false';
+  //   // converting data to match localstorage
+  //   let launch_year = launchMission.launch_year;
+  //   let launch_success = launchMission.launch_success ? 'true' : 'false';
+  //   let launch_land = launchMission.rocket.first_stage.cores[0].land_success ? 'true' : 'false';
 
-    return (
-    ( launch_year         == year     ||    year ===  ''   ) && 
-    ( launch_success  == launch ||    launch == ''  ) && 
-    ( launch_land         == land    ||     land == ''      )
-    )
-  });
+  //   return (
+  //   ( launch_year         == year     ||    year ===  ''   ) && 
+  //   ( launch_success  == launch ||    launch == ''  ) && 
+  //   ( launch_land         == land    ||     land == ''      )
+  //   )
+  // });
 
-  this.setState({ list: temp })
+  let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}&launch_success=${launch}&land_success=${land}&launch_year=${year}`)
+  console.log(`${API_HOST}/launches?limit=${this.state.count}&launch_success=${launch}&land_success=${land}&launch_year=${year}`)
+  res = await res.json();
+  console.log(res)
+
+  this.setState({ list: res })
 }
 
 changeYear = (year) => {
+  this.setState({list:null})
   year = year === this.state.year ? '' : year;
   this.setState({year});
   this.filter(year,this.state.launch,this.state.land);
 }
 
 changeLaunchFilter = (launch) => {
+  this.setState({list:null})
   launch = launch === this.state.launch ? '' : launch;
   this.setState({launch})
   this.filter(this.state.year,launch,this.state.land);
 }
 
 changeLandingFilter = (land) => {
+  this.setState({list:null})
   land = land === this.state.land ? '' : land;
   this.setState({land})
   this.filter(this.state.year,this.state.launch,land);

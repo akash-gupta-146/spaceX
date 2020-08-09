@@ -8,41 +8,27 @@ export default class LaunchList extends React.Component{
 
     constructor(props){
         super(props)
-        // this.state= {
-        //     list:[],
-        //     start:1,
-        //     count:10
-        // }
-
-        this.getData()
-        
     }
 
-    getData = async() => {
-        // let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}`);
-        // let data = await res.json();
-        // console.log(data)
-        // this.setState({list:data})
-    }
+    // FOR INFINITE SCROLL
+    //  componentDidMount = () => {
 
-     componentDidMount = () => {
+    //     const handleIntersection = (entries, observer) => {
+    //         entries.forEach((entry) => {
+    //             if (entry.intersectionRatio > prevRatio) {
+    //                 console.log('Last row of data')
+    //             } else {
+    //                 console.log('Not in viewport')
+    //             }
+    //             prevRatio = entry.intersectionRatio;
+    //         });
+    //     }
 
-        // const handleIntersection = (entries, observer) => {
-        //     entries.forEach((entry) => {
-        //         if (entry.intersectionRatio > prevRatio) {
-        //             console.log('Last row of data')
-        //         } else {
-        //             console.log('Not in viewport')
-        //         }
-        //         prevRatio = entry.intersectionRatio;
-        //     });
-        // }
+    //     let observer = new IntersectionObserver(handleIntersection);
+    //     observer.observe(document.querySelector('#loadmore'));
+    //     let prevRatio = 0;
 
-        // let observer = new IntersectionObserver(handleIntersection);
-        // observer.observe(document.querySelector('#loadmore'));
-        // let prevRatio = 0;
-
-    }
+    // }
 
     render = () =>{
         return<>
