@@ -11,8 +11,8 @@
     "react-ssr-scripts": "2.2.3"
   },
   "scripts": {
-    "start": "react-ssr-scripts start",
     "build": "react-ssr-scripts build",
+    "start": "react-ssr-scripts start",
     "test": "react-ssr-scripts test",
     "eject": "react-ssr-scripts eject"
   },
