@@ -7,7 +7,7 @@ import fetch from 'isomorphic-fetch';
 
 
 async function getData(){
-  let list = await fetch(`https://api.spaceXdata.com/v3/launches?limit=100`)
+  let list = await fetch(`https://api.spaceXdata.com/v3/launches?limit=10`)
   list = await list.json();
   return list;
 }
