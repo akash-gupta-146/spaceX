@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from './style.module.css';
+import  './style.css';
 import Card from '../card';
 
 // const API_HOST ='https://api.spacexdata.com/v3';
