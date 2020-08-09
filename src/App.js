@@ -15,7 +15,7 @@ class App extends React.Component{
         year: '',
         launch: '',
         land: '',
-        list: [],
+        list: null,
         count:100
     }
 
