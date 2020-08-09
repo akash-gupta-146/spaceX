@@ -1,15 +1,44 @@
+# SpaceX Launches
 
-## Available Scripts
+Application list down all the launches by spaceX.
+User can also filter the results based on Launch Year, Successful Launc or Success Landing.
 
-In the project directory, you can run:
+## Key Points
 
-### `npm start`
+*   App supports Server Side Rendering
+*   User can filter results (launch year, launch success and success landing)
+*   Filter configuration is stored in localstorage hence, filters are not disturbed event after page refresh
+*   Design is fully responsive and follows Mobile First approach.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to Run
 
-### `npm run build`
+1) Goto application directory
+2)  yarn install
+3)  yarn start
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-# spaceX
+App will be hosted on localhost port 3030 (if port is not specified in process env)
+
+## How to Deploy
+
+1) Goto application directory
+2) yarn build
+3) node build
+
+App will be hosted on localhost port 3030 (if port is not specified in process env)
+
+## Git repository
+
+ https://git.heroku.com/spacex-launche.git
+
+
+## Deployment
+App is live and deployed at [spacex](https://spacex-launche.herokuapp.com/) https://spacex-launche.herokuapp.com/
+
+## Performance Measures
+
+<img src="imgs/accessibility.png" />
+<img src="imgs/Best-Practises.png" />
+<img src="imgs/SEO.png" />
+
+
+
