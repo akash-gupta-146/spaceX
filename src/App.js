@@ -86,11 +86,7 @@ updateLocalstorage = () =>{
     if(window){
         if(window.localStorage.configuration){
             let temp = JSON.parse(window.localStorage.configuration)
-            this.setState({...temp}, this.filter)
-            
-        }else{
-            let temp = JSON.stringify(this.state);
-            window.localStorage.setItem('configuration',temp)
+            this.setState({...temp})
         }
     }
 }

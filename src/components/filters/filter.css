@@ -12,6 +12,13 @@
     margin-bottom:30px;
 }
 
+.filterLabel{
+    font-weight:bold;
+    display: block;
+    font-size: 1.17em;
+    margin:1em 0;
+}
+
 .filter .options{
     display:flex;
     flex-wrap: wrap;

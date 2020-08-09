@@ -1,17 +1,17 @@
 import React from 'react';
-import * as style from './style.module.css';
+import './style.css';
 
 export default function Card ({launch}) {
 
-    return <div className={style.card}>
-        <div className={style.body}>
-            <div className={style.img}>
+    return <div className='card'>
+        <div className='body'>
+            <div className='img'>
                 <img src={launch.links.mission_patch_small} alt='rocket patch' />
             </div>
-            <label className={style.label}>
+            <label className='label'>
                 { `${launch.mission_name} #${launch.flight_number}` }
             </label>
-            <div className={style.missions}>
+            <div className='missions'>
                 <strong>Mission Ids: </strong>
                     {
                         launch.mission_id.length ?  
