@@ -15,18 +15,11 @@ class App extends React.Component{
         year: '',
         launch: '',
         land: '',
-        list: null,
+        list: this.props.list,
         count:100
     }
-
-    this.getLaunches()
   }
 
-  getLaunches = async () => {
-    let res = await fetch(`${API_HOST}/launches?limit=${this.state.count}`);
-    this.launchData = await res.json();
-    this.setState({list:this.launchData})
-  }
 
 componentDidUpdate(){
   this.updateLocalstorage();
@@ -59,6 +52,7 @@ filter = async ( year = this.state.year, launch = this.state.launch, land = this
 
 changeYear = (year) => {
   this.setState({list:null})
+  // eslint-disable-next-line
   year = year === this.state.year ? '' : year;
   this.setState({year});
   this.filter(year,this.state.launch,this.state.land);
@@ -66,6 +60,7 @@ changeYear = (year) => {
 
 changeLaunchFilter = (launch) => {
   this.setState({list:null})
+  // eslint-disable-next-line
   launch = launch === this.state.launch ? '' : launch;
   this.setState({launch})
   this.filter(this.state.year,launch,this.state.land);
@@ -73,6 +68,7 @@ changeLaunchFilter = (launch) => {
 
 changeLandingFilter = (land) => {
   this.setState({list:null})
+  // eslint-disable-next-line
   land = land === this.state.land ? '' : land;
   this.setState({land})
   this.filter(this.state.year,this.state.launch,land);
@@ -86,11 +82,12 @@ updateLocalstorage = () =>{
 }
 }
 
-  componentDidMount(){
+   componentDidMount(){
     if(window){
         if(window.localStorage.configuration){
             let temp = JSON.parse(window.localStorage.configuration)
-            this.setState({...temp})
+            this.setState({...temp}, this.filter)
+            
         }else{
             let temp = JSON.stringify(this.state);
             window.localStorage.setItem('configuration',temp)
