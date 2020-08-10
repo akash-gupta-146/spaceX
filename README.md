@@ -7,6 +7,7 @@ User can also filter the results based on Launch Year, Successful Launc or Succe
 
 *   App supports Server Side Rendering
 *   User can filter results (launch year, launch success and success landing)
+*   By clicking selected filter again, it will reset that filter.
 *   Filter configuration is stored in localstorage hence, filters are not disturbed event after page refresh
 *   Design is fully responsive and follows Mobile First approach.
 
