@@ -97,6 +97,7 @@ render(){
   <div className='container'>
     <Filters config={this.state} setYear={this.changeYear} setLaunch={this.changeLaunchFilter} setLand={this.changeLandingFilter} />
     <LaunchList  config={this.state} year={this.state.year}  list={this.state.list} />
+    <div className="center"><strong>Developed By: </strong> Akash Gupta</div>
   </div>
 </div> 
 }

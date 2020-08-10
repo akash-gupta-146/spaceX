@@ -12,6 +12,9 @@ h1{
   width:100%;
   margin:auto;
 }
+.center{
+  text-align:center;
+}
 
 @media (min-width: 700px){
   .container{
