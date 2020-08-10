@@ -9,7 +9,7 @@ export default function Result({type}) {
 
     return <div  className='result'>
     <img src={image} alt='image' />
-    <div className='text'>
+    <div className='text' data-testid='app-status' >
         { type === 'loading' ? 'Loading...' : 'No Related Results'}
     </div>
         </div>
