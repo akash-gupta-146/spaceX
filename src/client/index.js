@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import App from '../App';
-
+import * as serviceWorker from './serviceWorker'
 async function getData(){
     let list = await fetch(`https://api.spaceXdata.com/v3/launches?limit=100`)
     list = await list.json();
@@ -16,3 +16,4 @@ async function hydrate(){
 }
 
 hydrate();
+serviceWorker.register();
